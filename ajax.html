@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       body{
+            transition: .5s ;
+       }
+        #container{
+            margin: 0 auto ;
+            padding: 20px ;
+            width: 40% ;
+            min-width: 200px ;
+            border-radius: 15px ;
+            background-color: #FFF ;
+            box-shadow: 0 2px 2px #000000ad ;
+            text-align: center ;
+            transition: .5s ;
+        }
+        .show{
+            transform: translateY(0px) ;
+            opacity: 1 ;
+        }
+        .close{
+            opacity: 0 ;
+            transform: translateY(10px) ;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="open">Click</button>
+    <button class="clo">Close</button>
+    <div id="container" class="close"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script>
+        $(".open").click(function(){
+            $.get("./ajax/a.txt", function(data){
+                $("#container").empty();
+                $("#container").append(data);
+                $("#container").removeClass("close").addClass("show");
+                $("body").css("backgroundColor","#000000a4");
+            });
+        });
+        $(".clo").click(function(){
+            $("#container").removeClass("show").addClass("close");
+            $("body").css("backgroundColor","#FFFFFF00");
+        });
+
+    </script>
+
+</body>
+
+</html>
