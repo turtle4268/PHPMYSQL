@@ -40,21 +40,40 @@
         </tr>
     <?php endfor; ?>
     </tbody>
-</table>    
+</table>
+<table border="1">
+    <tbody>
+    <?php for($i=0;$i<9;$i++): ?>
+        <tr>
+            <?php for($s=0;$s<9;$s++): ?>
+                <td><?php printf("%s*%s=%s",$i+1,$s+1,($i+1)*($s+1)) ?></td>
+            <?php endfor; ?>
+        </tr>
+    <?php endfor; ?>
+    </tbody>
+</table>        
+<?php
+    $FF=1.254 ;
+    printf('$FF=%.2f<br>',$FF);
+    $a = isset($_GET['a']) ? $_GET['a'] : " ";
+    $b=99 ;
+     echo $a.'<br>' ;
+     echo isset($b);
+?>
 <div class="nine"></div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
 <script>
-    for(i=0;i<9;i++){
-        for(s=0;s<9;s++){
-            var result=(i+1)*(s+1);
-            if(result<100) result=" "+result;
-            if(result<10) result=" "+result;
+    // for(i=0;i<9;i++){
+    //     for(s=0;s<9;s++){
+    //         var result=(i+1)*(s+1);
+    //         if(result<100) result=" "+result;
+    //         if(result<10) result=" "+result;
 
-            $(".nine").append(result);
-        }
-        $(".nine").append("<br>");
-    }
+    //         $(".nine").append(result);
+    //     }
+    //     $(".nine").append("<br>");
+    // }
 </script>
 </body>
 </html>
