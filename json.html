@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      
+    </style>
+</head>
+
+<body>
+    <textarea id="show" cols="30" rows="10"></textarea>
+    <button class="toJson">TO JSON</button>
+    <button class="toObj">TO OBJ</button>
+    <h2></h2>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script>
+        var peo={
+            name:"Gary",
+            gender:"male",
+            age:28
+        }
+        //物件轉成JSON
+        $(".toJson").click(function(){
+            var toJ=JSON.stringify(peo);
+            $("#show").val(toJ);
+            
+        });
+        //JSON轉成物件
+        $(".toObj").click(function(){
+            try {
+                var toO=JSON.parse($("#show").val());
+                console.log(toO);
+                peo=toO ;
+            } catch (error) {   //error message
+                alert("JSON語法錯誤")
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>
