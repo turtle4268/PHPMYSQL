@@ -36,6 +36,11 @@
     <button class="open">Click</button>
     <button class="clo">Close</button>
     <div id="container" class="close"></div>
+
+    <!--傳值-->
+    <input type="text" id="input" value="5">
+    <button class="sent">SENT</button>
+    <h2></h2>
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
@@ -52,7 +57,13 @@
             $("#container").removeClass("show").addClass("close");
             $("body").css("backgroundColor","#FFFFFF00");
         });
-
+        //傳值
+        $(".sent").click(function(){
+            var num=$("#input").val();
+            $.get("./ajax/b.php",{"n":num},function(data){
+                $("h2").text(data);
+            });
+        });
     </script>
 
 </body>
