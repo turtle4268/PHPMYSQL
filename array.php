@@ -22,6 +22,25 @@
     print_r($a);
     echo "<br>";
     print_r($b);
+
+    $a[]='a';   //新增陣列元素
+    $a[]='b';
+
+    foreach($a as $i=>$j){
+        echo "$i :: $j";
+        echo "<br>";
+    }
+
+    $i=10;
+    $j=20;
+    function swap(&$m,&$n){
+        $x=$m;
+        $m=$n;
+        $n=$x;
+    }
+    swap($i,$j);
+    echo "$i , $j";
+
   ?>
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
